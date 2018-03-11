@@ -34,6 +34,12 @@
 #include "kiss_fft.h"
 #endif
 
+#ifndef USE_FFTW
+#ifndef USE_KISS_FFT
+#error Please specify FFT library with -DUSE_FFTW or -DUSE_KISS_FFT
+#endif
+#endif
+
 //=======================================================================
 /** A class for calculating a Chromagram from input audio
  * in a real-time context */
